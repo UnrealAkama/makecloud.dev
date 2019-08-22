@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/moon.css">
+        <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section>
+                  <h2> Makecloud</h2>
+                  <p> a CI/CD tool in OCaml. </p>
+                  <p> a simple build tool for complex repos. </p>
+                </section>
+                <section>
+                  <h2> whoami </h2>
+                  <p> Adam - a security R&#x26;D engineer </p>
+                  <p> working at Endgame writing OCaml. </p>
+                  <p> twitter: @avidhacker  </p>
+                  <p> @hcarty helped significantly but couldn't be here. <p>
+                </section>
+				<section>
+                  <h2> Why Makecloud? </h2>
+                  <p> * Wanted open source tool to deploy our code for the modern era. </p>
+                </section>
+				<section>
+                  <h3> Problems with existing solutions? </h3>
+                  <p> * Based on pipeline abstraction, can’t handle complex codebases. </p>
+                  <p> * Security issues </p>
+                  <p> * Hard to scale well </p>
+                </section>
+				<section>
+                  <h2> What are the core values? </h2>
+                  <p> * Secure, CI/CD is more of target then ever. </p>
+                  <p> * Easy to Use/Operator friendly. </p>
+                  <p> * Fast, quick feedback. </p>
+                </section>
+				<section>
+                  <section>
+                    <h2> What makes it different? </h2>
+                    <p> * cli first. </p>
+                    <p> * Built in file storage and caching. </p>
+                    <p> * DAG based rather than pipeline based. </p>
+                  </section>
+                  <section>
+                    <img src="assets/mc.gif"/>
+                  </section>
+                </section>
+				<section>
+                  <section>
+                    <h2> How does it work? </h2>
+                    <p> * OCaml 😃 </p>
+                    <p> * Smart caching. </p>
+                    <p> * VM per node. </p>
+                  </section>
+                  <section>
+  <pre><code>
+    service1-deploy:
+      fileroot: .
+      base: ami-0b898040803850657
+      env:
+        - APIKEY
+      steps:
+        - RUN ls
+        - RUN touch /results
+        - UPLOAD /results results
+
+    service1-deploy:
+      fileroot: .
+      base: ami-0b898040803850657
+      keywords: deploy
+      env:
+        - APIKEY
+      steps:
+        - RUN cal
+        - RUN ls
+  </code></pre>
+                  </section>
+                  <section>
+                    <p> * Example: </p>
+                    <img src="assets/eg.png"/>
+                  </section>
+                </section>
+				<section>
+                  <h2> Why OCaml? </h2>
+                  <p> * One core lib, used in both the web server and cli </p>
+                  <p> * Explicit handling of error cases </p>
+                  <p> * Ecosystem is very helpful. </p>
+                  <p> * Building on windows is surprisingly easy. </p>
+                  <p> * Most of the important code is a functor over a provider signature.
+                </section>
+				<section>
+                  <h2> Infra in OCaml </h2>
+                  <p> * More people should write infra code in OCaml. </p>
+                  <p> * Infra is hard, strong types make it easier.  </p>
+                  <p> * Handling failure for infra is very hard. </p>
+                </section>
+				<section>
+                  <h2> Warning: BETA</h2>
+                  <p> * We use this in production, that doesn't mean you should. </p>
+                  <p> * Still pre 1.0 release.  </p>
+                  <p> * Still bugs and bad error messages all over the place. </p>
+                </section>
+				<section>
+                  <h2> Work TBD </h2>
+                  <p> * Support for a dynamic language. </p>
+                  <p> * Support more infra providers.  </p>
+                  <p> * Maybe unikernel support? (come talk to me 😃) </p>
+                </section>
+				<section>
+                  <h2> Makecloud </h2>
+                  <p> git: github.com/endgame/makecloud </p>
+                  <p> www: makecloud.dev </p>
+                  <p> twitter: @avidhacker </p>
+                  <p> Come chat about Endgame </p>
+                </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
