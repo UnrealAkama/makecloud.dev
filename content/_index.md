@@ -8,7 +8,7 @@ type: docs
 
 ## What is Makecloud?
 
-Makecloud is an open source CI/CD tool that is meant to make it easy to build software repositories in a simple manner. This is done so that it can intellegently stages in parallel and minimize the time that an individual run takes.
+Makecloud is an open source CI/CD tool that is meant to make it easy to build software repositories in a simple manner. This is done so that it can intellegently run stages in parallel and minimize the time that an individual run takes.
 
 Makecloud is designed to work with large and complex source repositories, including monorepos, and other modern software development environments that deploy to directly to the cloud. The first and most significant design choice is to have Makecloud operate over a directed acyclic graph instead of pipeline or linear set of stages.
 
