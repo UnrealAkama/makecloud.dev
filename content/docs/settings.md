@@ -5,10 +5,10 @@ Makecloud needs a settings file at the root of your project. This won't contain 
         notify_url: http://localhost:8000/report
         cachable: true
         ignored_files: [ ]
-        storage_bucket: makecloud-storage
-        aws_security_group: sg-0b1c1099439c1fb2c
-        aws_key_name: ecs-key-prod
-        aws_subnet_id: subnet-047a9a7a689a05943
+        storage_bucket: bucket_name_here
+        aws_security_group: sg-*****************
+        aws_key_name: key_name_here
+        aws_subnet_id: subnet-*****************
 
 ## notify_url
 
@@ -30,10 +30,10 @@ Makecloud needs a settings file at the root of your project. This won't contain 
 
 `aws_security_group` is the name of the AWS security group for EC2. This security group must have TCP access to port 8080.
 
-## aws_key_name 
+## aws_key_name
 
 `aws_key_name` is the name of the ssh key that will be installed on the box. This isn't actually used in the operation of Makecloud but can be used to debug failed nodes.
 
-## aws_subnet_id 
+## aws_subnet_id
 
 `aws_subnet_id` is the subnet in AWS that you wish for nodes to be located in. For security reasons, it's recommended that this is seperated from other running systems.
