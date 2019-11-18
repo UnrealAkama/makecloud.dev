@@ -37,3 +37,7 @@ Makecloud needs a settings file at the root of your project. This won't contain 
 ## aws_subnet_id
 
 `aws_subnet_id` is the subnet in AWS that you wish for nodes to be located in. For security reasons, it's recommended that this is seperated from other running systems.
+
+## only_public_ip
+
+`only_public_ip` is used for when you spin up agents in a vpc and they get a public ip and should be contacted over that ip address.
