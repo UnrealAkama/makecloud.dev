@@ -1,6 +1,6 @@
 # Settings
 
-Makecloud needs a settings file at the root of your project. This won't contain any secrets and can ideally be checked into your code repository with the rest of your code. The one below can serve as a basic example for what a simple file looks like.
+Makecloud needs a settings file at the root of your project. This is used to configure some global settings or repository specific settings for makecloud. This won't contain any secrets and can ideally be checked into your code repository with the rest of your code. The one below can serve as a basic example for what a simple file looks like. This must be placed in a file called `mc_settings.yml` in the root of your project directory.
 
         notify_url: http://localhost:8000/report
         cachable: true
@@ -41,3 +41,7 @@ Makecloud needs a settings file at the root of your project. This won't contain 
 ## only_public_ip
 
 `only_public_ip` is used for when you spin up agents in a vpc and they get a public ip and should be contacted over that ip address.
+
+## disk_size
+
+`disk_size` adjusts the size of the disks attached to the worker instances that are spawned. default size is 10 gb, unit is gb.
