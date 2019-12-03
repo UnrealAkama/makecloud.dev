@@ -6,6 +6,7 @@ Makecloud needs a settings file at the root of your project. This is used to con
         cachable: true
         ignored_files: [ ]
         storage_bucket: bucket_name_here
+        bucket_region: us-east-2
         aws_security_group: sg-*****************
         aws_key_name: key_name_here
         aws_subnet_id: subnet-*****************
@@ -25,6 +26,10 @@ Makecloud needs a settings file at the root of your project. This is used to con
 ## storage_bucket
 
 `storage_bucket` controls the name of the S3 bucket that will be used to store the cache, stored logs for runs, and transfering files. The AWS credentials that Makecloud uses must have access to list objects, get objects, and put objects.
+
+## bucket_region
+
+`bucket_region` selects which region the `storage_bucket` is in, if it's not correct, the most common error is that source fails to upload and download correctly.
 
 ## aws_security_group
 
