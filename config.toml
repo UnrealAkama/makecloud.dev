@@ -1,4 +1,4 @@
-baseURL = "makecloud.dev"
+baseURL = "https://makecloud.dev"
 languageCode = "en-us"
 title = "Makecloud Documentation"
 
