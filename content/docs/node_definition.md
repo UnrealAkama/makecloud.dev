@@ -16,7 +16,7 @@ Node definitions are written in Yaml with a single block describing a whole node
 
 ## fileroot
 
-The fileroot parameter is used to control caching for the individual folder for a service. It is relative to the root of the project as a whole.
+The fileroot parameter is used to control caching for the individual folder or file relating to building a service. It is relative to the root of the project as a whole. This can also take a list of file roots or specific files to hash.
 
 ## base
 
